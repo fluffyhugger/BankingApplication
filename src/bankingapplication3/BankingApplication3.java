@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package bankingapplication3;
+import java.util.Random;
 import java.util.Scanner;
 /**
  *
@@ -40,7 +41,7 @@ public class BankingApplication3 {
                     bank.listAccount();
                     break;
                 case 2:
-                    number = 11111;
+                    number = generateAccountNumber();
                     System.out.print("Enter Account Name:");
                     name = scan.nextLine();
                     System.out.print("Enter Initial Balance:");
@@ -52,6 +53,7 @@ public class BankingApplication3 {
                     System.out.print("Enter Account number");
                     number = scan.nextInt();
                     bank.closeAccount(number);
+                    System.out.println("Account is deleted");
                     break;
                 case 4:
                     System.out.print("Enter Account Number");
@@ -60,6 +62,7 @@ public class BankingApplication3 {
                     System.out.print("Enter Amount: ");
                     amount = scan.nextDouble();
                     bank.depositMoney(account, amount);
+                    System.out.println("Balance : " + account.getBalance());
                     break;
                 case 5:
                     System.out.print("Enter Account Number");
@@ -72,6 +75,11 @@ public class BankingApplication3 {
               
             }
         }
+    }
+    public static int generateAccountNumber(){
+        Random random = new Random();
+        int accNumber = 10000 + random.nextInt(900000);
+        return accNumber;
     }
     
 }
