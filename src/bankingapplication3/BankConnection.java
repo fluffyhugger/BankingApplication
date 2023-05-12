@@ -15,7 +15,7 @@ public class BankConnection {
     public static Connection connect(){
         String URL = "jdbc:mysql://localhost:3306/mydb3";
         String username = "root";
-        String password = "147258369";
+        String password = "root";
         Connection connection = null;
         try{
             
